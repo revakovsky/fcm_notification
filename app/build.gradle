@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Pin_Up_Tech\\2.Materials\\KeyStore\\KeyStore_master.jks')
+            storePassword 'KeyStore_master'
+            keyAlias 'KeyStore_master'
+            keyPassword 'KeyStore_master'
+        }
+    }
     namespace 'com.amanotes.classicalpian'
     compileSdk 33
 
@@ -19,6 +27,7 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
