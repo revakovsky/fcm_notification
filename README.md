@@ -16,7 +16,7 @@ application itself opens
 
 - add to the `settings.gradle` file maven repository:
 
-```kotlin
+```groovy
 dependencyResolutionManagement {
     ...
     repositories {
@@ -28,7 +28,7 @@ dependencyResolutionManagement {
 
 - add to the `build.gradle` module's level file these dependencies and plugins:
 
-```kotlin
+```groovy
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -55,7 +55,7 @@ dependencies {
 
 - add to the `build.gradle` project's level file this classpath:
 
-```kotlin
+```groovy
 buildscript {
     repositories {
         mavenCentral()
@@ -71,7 +71,7 @@ buildscript {
   the `main` folder of your `app` module to the Firebase service works correctly with your application
 - add to the `AndroidManifest.xml` file these permissions and :
 
-```kotlin
+```xml
 <uses-permission android:name="android.permission.INTERNET" />
 
 // in the activity which you want to open when the user taps on the notification
