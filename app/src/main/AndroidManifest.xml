@@ -5,41 +5,24 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".App"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SweetBonanza"
+        android:theme="@style/Theme.FCM_Library"
         android:usesCleartextTraffic="true"
         tools:replace="android:fullBackupContent"
         tools:targetApi="31">
-
-        <activity
-            android:name=".web.WebActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="false"
-            android:label="@string/title_activity_web"
-            android:theme="@style/Theme.SweetBonanza"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".game.MainActivity"
-            android:exported="false"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.SweetBonanza"
-            tools:ignore="LockedOrientationActivity,RedundantLabel" />
 
         <!--    TODO: maybe delete these 2 lines    -->
         <activity
             android:name=".running.RunningActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.SweetBonanza"
+            android:theme="@style/Theme.FCM_Library"
 
             android:excludeFromRecents="true"
             android:launchMode="singleTop"
@@ -56,9 +39,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <service android:name=".running.AdbCheckService" />
-        <service android:name=".running.UrlService" />
 
         <!--        TODO: try to relocate these code to the module's manifest       -->
         <service
@@ -83,12 +63,6 @@
 <!--            android:value="false" />-->
         <!--                        -->
 
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-        <meta-data
-            android:name="com.facebook.sdk.ClientToken"
-            android:value="@string/facebook_client_token" />
     </application>
 
 </manifest>

@@ -18,7 +18,6 @@ import androidx.compose.ui.unit.dp
 import com.amanotes.classicalpian.R
 import com.amanotes.classicalpian.ui.elements.BackgroundImage
 import com.amanotes.classicalpian.ui.elements.ShowAlertDialog
-import com.amanotes.classicalpian.ui.elements.TitleText
 import com.amanotes.classicalpian.ui.theme.Blue
 import com.amanotes.classicalpian.ui.theme.Pink
 
@@ -59,12 +58,6 @@ fun RunningScreen(
             color = Pink,
             trackColor = Blue,
             modifier = modifier
-        )
-
-        TitleText(
-            textRes = R.string.loading,
-            textColor = Blue,
-            shadowRadius = 0f
         )
 
         Spacer(modifier = modifier.height(150.dp))

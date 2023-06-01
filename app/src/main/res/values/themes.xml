@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.SweetBonanza" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.FCM_Library" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/black</item>
     </style>
 

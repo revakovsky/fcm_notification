@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Sweet Bonanza"
+rootProject.name = "fcm_notification"
 include ':app'
 include ':fcm_notification'

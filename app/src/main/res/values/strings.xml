@@ -1,37 +1,11 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <string name="app_name">Sweet Bonanza</string>
-    <string name="facebook_app_id">236534615716138</string>
-    <string name="facebook_client_token">6fd49a5c14a1c865d786803ede61f4c3</string>
-    <string name="OneSignalAppId" tools:ignore="TypographyDashes">baec61fe-d720-4582-8b31-17c2d068c488</string>
+    <string name="app_name">fcm_notification</string>
     <string name="background_image">Background image</string>
-    <string name="start">Start</string>
-    <string name="settings">Settings</string>
-    <string name="exit">Exit</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="exit_game">Exit Game</string>
-    <string name="exit_message">Do you want to exit the Game?</string>
-    <string name="you_ran_out_money">You ran out of all your money&#8230;\n\nPlease, restart the game</string>
-    <string name="your_max_score">Your max score is:</string>
-    <string name="gold_coin">Gold coin</string>
-    <string name="back">Back</string>
-    <string name="clear">Clear</string>
-    <string name="clear_message">Do you want to clear your max score?</string>
-    <string name="to_menu">To Menu</string>
-    <string name="menu">Menu</string>
-    <string name="slot_image">Slot Image</string>
-    <string name="spin">Spin</string>
-    <string name="loading">Loading..</string>
     <string name="ok">OK</string>
     <string name="no_internet_connection">No Internet Connection</string>
     <string name="turn_on_the_internet">Please, turn on the Internet to continue using the App</string>
-    <string name="title_activity_web">WebActivity</string>
-    <string name="exit_app_message">Do you want to exit the App?</string>
-    <string name="permission_request">Permission request</string>
-    <string name="app_needs_confirmation">This app needs confirmation to post notifications. If you turn the delivery of notifications off from the application, you may miss out on interesting offers and news</string>
-    <string name="turn_on_manually">It looks like you have permanently denied permission to send notifications. If you change your mind, you can always turn it on in the app\'s settings and grant permission manually</string>
-    <string name="grant">Grant permission</string>
-    <string name="reject">Reject</string>
 
 </resources>
