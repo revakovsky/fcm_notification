@@ -49,7 +49,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging-ktx:23.1.2'
 
     // needed to connect the current library
-    implementation 'com.github.revakovsky:fcm_notification:1.0.1'
+    implementation 'com.github.revakovsky:fcm_notification:version'
 }
 ```
 
