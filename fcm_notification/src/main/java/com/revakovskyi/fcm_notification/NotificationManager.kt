@@ -1,12 +1,11 @@
 package com.revakovskyi.fcm_notification
 
-import android.util.Log
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.ktx.messaging
 import com.revakovskyi.fcm_notification.network.NetworkManager
 import com.revakovskyi.fcm_notification.utils.Constants.ErrorsMessages.EXCEPTION_WHILE_SUBSCRIBING_TO_THE_TOPIC
 import com.revakovskyi.fcm_notification.utils.Constants.ErrorsMessages.SUBSCRIBE_TO_THE_TOPIC
 import com.revakovskyi.fcm_notification.utils.Constants.Main.TOPIC_NAME
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.messaging.ktx.messaging
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -54,13 +53,11 @@ class NotificationManager {
                         Firebase.messaging.isAutoInitEnabled = true
                         sendDataToServer(deferred)
                     } else {
-                        Log.d("TAG_Max", "$SUBSCRIBE_TO_THE_TOPIC ${task.exception}")
                         println(SUBSCRIBE_TO_THE_TOPIC + task.exception)
                         deferred.complete(false)
                     }
                 }
         } catch (e: Exception) {
-            Log.d("TAG_Max", "$EXCEPTION_WHILE_SUBSCRIBING_TO_THE_TOPIC ${e.localizedMessage}")
             println(EXCEPTION_WHILE_SUBSCRIBING_TO_THE_TOPIC + e.localizedMessage)
             deferred.complete(false)
         }

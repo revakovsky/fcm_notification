@@ -24,7 +24,6 @@ object Constants {
     }
 
     object NotificationBuilder {
-        const val NOTIFICATION_ID = 1377
         const val INTENT_ACTION = "com.amanotes.classicalpian.ACTION_NOTIFICATION_CLICK"
     }
 

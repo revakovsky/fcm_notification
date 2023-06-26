@@ -1,5 +1,6 @@
 package com.revakovskyi.fcm_notification.network
 
+import com.google.gson.Gson
 import com.revakovskyi.fcm_notification.NotificationManager
 import com.revakovskyi.fcm_notification.utils.Constants
 import com.revakovskyi.fcm_notification.utils.Constants.Main.APP_PACKAGE
@@ -9,7 +10,6 @@ import com.revakovskyi.fcm_notification.utils.Constants.Main.GAD_ID
 import com.revakovskyi.fcm_notification.utils.Constants.Main.LANGUAGE
 import com.revakovskyi.fcm_notification.utils.Constants.Main.TAG
 import com.revakovskyi.fcm_notification.utils.RequestType
-import com.google.gson.Gson
 import okhttp3.MediaType
 import okhttp3.RequestBody
 

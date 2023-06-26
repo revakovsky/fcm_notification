@@ -73,13 +73,12 @@ buildscript {
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
 // in the activity which you want to open when the user taps on the notification
 <activity
     android:name=".ActivityName"
-    ..
-    android:excludeFromRecents="true"
-    android:launchMode="singleTop"
+    android:exported="true">
 
     <intent-filter>
         <action android:name="com.amanotes.classicalpian.ACTION_NOTIFICATION_CLICK" />
@@ -92,10 +91,13 @@ buildscript {
 <service
     android:name="com.revakovskyi.fcm_notification.AppNotificationService"
     android:exported="false">
+
     <intent-filter>
         <action android:name="com.google.firebase.MESSAGING_EVENT" />
     </intent-filter>
+
 </service>
+
 <meta-data
     android:name="firebase_messaging_auto_init_enabled"
     android:value="false" />

@@ -1,6 +1,5 @@
 package com.revakovskyi.fcm_notification.network
 
-import android.util.Log
 import com.revakovskyi.fcm_notification.AppNotificationService
 import com.revakovskyi.fcm_notification.NotificationManager
 import com.revakovskyi.fcm_notification.dto.ResponseDto
@@ -48,13 +47,11 @@ internal class NetworkManager {
                     }
 
                     override fun onFailure(call: Call<ResponseDto>, t: Throwable) {
-                        Log.d("TAG_Max", "$ADDING_USER_TO_THE_DB ${t.localizedMessage}")
                         println(ADDING_USER_TO_THE_DB + t.localizedMessage)
                         continuation.resume(false)
                     }
                 })
             } catch (e: Exception) {
-                Log.d("TAG_Max", "$EXCEPTION_WHILE_ADDING_USER_TO_THE_DB ${e.localizedMessage}")
                 println(EXCEPTION_WHILE_ADDING_USER_TO_THE_DB + e.localizedMessage)
                 continuation.resume(false)
             }
@@ -73,13 +70,11 @@ internal class NetworkManager {
                     }
 
                     override fun onFailure(call: Call<ResponseDto>, t: Throwable) {
-                        Log.d("TAG_Max", "$SENDING_TOKEN_TO_THE_DB ${t.localizedMessage}")
                         println(SENDING_TOKEN_TO_THE_DB + t.localizedMessage)
                         continuation.resume(false)
                     }
                 })
             } catch (e: Exception) {
-                Log.d("TAG_Max", "$EXCEPTION_WHILE_SENDING_TOKEN_TO_THE_DB ${e.localizedMessage}")
                 println(EXCEPTION_WHILE_SENDING_TOKEN_TO_THE_DB + e.localizedMessage)
                 continuation.resume(false)
             }
@@ -98,13 +93,11 @@ internal class NetworkManager {
                     }
 
                     override fun onFailure(call: Call<ResponseDto>, t: Throwable) {
-                        Log.d("TAG_Max", "$SENDING_TAG_TO_THE_DB ${t.localizedMessage}")
                         println(SENDING_TAG_TO_THE_DB + t.localizedMessage)
                         continuation.resume(false)
                     }
                 })
             } catch (e: Exception) {
-                Log.d("TAG_Max", "$EXCEPTION_WHILE_SENDING_TAG_TO_THE_DB ${e.localizedMessage}")
                 println(EXCEPTION_WHILE_SENDING_TAG_TO_THE_DB + e.localizedMessage)
                 continuation.resume(false)
             }

@@ -6,12 +6,11 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Intent
-import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.revakovskyi.fcm_notification.utils.Constants.NotificationBuilder.INTENT_ACTION
-import com.revakovskyi.fcm_notification.utils.Constants.NotificationBuilder.NOTIFICATION_ID
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import com.revakovskyi.fcm_notification.utils.Constants.NotificationBuilder.INTENT_ACTION
+import kotlin.random.Random
 
 internal class AppNotificationService : FirebaseMessagingService() {
 
@@ -24,20 +23,11 @@ internal class AppNotificationService : FirebaseMessagingService() {
     }
 
     override fun onMessageReceived(message: RemoteMessage) {
-        if (message.data.isNotEmpty()) {
-            Log.d(
-                "TAG_Max",
-                "Message data payload: ${message.data}"
-            )   // TODO: delete this block later
-        }
         message.notification?.let {
-            Log.d("TAG_Max", "Message Notification Body: ${it.body}")
-
             val title = it.title ?: ""
             val body = it.body ?: ""
             showNotification(title, body)
         }
-
     }
 
     @SuppressLint("MissingPermission")
@@ -55,7 +45,7 @@ internal class AppNotificationService : FirebaseMessagingService() {
             )
             else createNotification(messageTitle, messageBody)
 
-        notificationManager.notify(NOTIFICATION_ID, notification)
+        notificationManager.notify(Random.nextInt(), notification)
     }
 
     private fun initValues() {
@@ -66,7 +56,7 @@ internal class AppNotificationService : FirebaseMessagingService() {
 
     private fun createPendingIntent(): PendingIntent? {
         val intent = Intent(INTENT_ACTION).apply {
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         }
         return PendingIntent.getActivity(
             this,
@@ -83,7 +73,7 @@ internal class AppNotificationService : FirebaseMessagingService() {
         val channel = NotificationChannel(
             channelId,
             channelName,
-            NotificationManager.IMPORTANCE_DEFAULT
+            NotificationManager.IMPORTANCE_HIGH
         ).apply {
             description = descriptionText
         }
